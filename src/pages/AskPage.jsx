@@ -7,7 +7,7 @@ const AskPage = () => {
     <>
       <NavBar />
 
-      <main>
+      <form>
         <section className="title-query">
           <h1>Title</h1>
           <p>Be specific, yet concise</p>
@@ -15,10 +15,10 @@ const AskPage = () => {
         </section>
         <section className="body-query">
           <h1>Body</h1>
-          <input type="text" className="body-input"></input>
+          <textarea className="body-input"></textarea>
         </section>
         <button>Submit</button>
-      </main>
+      </form>
     </>
   )
 }

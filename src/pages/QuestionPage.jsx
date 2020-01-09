@@ -12,14 +12,23 @@ const QuestionPage = () => {
           <p className="question-title">How do I send an eMail?</p>
           <div className="question-body-container">
             <div className="question-vote-container">
-              <p className="upvote">A</p>
+              <p className="zoom">
+                <i class="fas fa-caret-up"></i>
+              </p>
               <p className="question-score">0</p>
-              <p className="downvote">V</p>
+              <p className="zoom">
+                <i class="fas fa-caret-down"></i>
+              </p>
             </div>
             <p className="question-body">
-              This is my first time on the internet, please help!
+              This is my first time on the internet, please help! Lorem ipsum
+              dolor sit amet consectetur adipisicing elit. Dicta consequuntur
+              blanditiis doloremque voluptatum, aliquid quaerat libero sit
+              debitis eligendi voluptates, cumque et explicabo nostrum veritatis
+              minus vel amet maxime numquam!
             </p>
           </div>
+          <p className="question-timestamp">Jan 7, 2019 10:10am</p>
         </section>
 
         <section className="answer">
@@ -27,14 +36,19 @@ const QuestionPage = () => {
           <section className="answer-container">
             <div className="question-body-container">
               <div className="question-vote-container">
-                <p className="upvote">A</p>
+                <p className="zoom">
+                  <i class="fas fa-caret-up"></i>
+                </p>
                 <p className="question-score">0</p>
-                <p className="downvote">V</p>
+                <p className="zoom">
+                  <i class="fas fa-caret-down"></i>
+                </p>
               </div>
               <p className="question-body">
                 This is my first time on the internet, please help!
               </p>
             </div>
+            <p className="question-timestamp">Jan 7, 2019 10:10am</p>
           </section>
         </section>
 
