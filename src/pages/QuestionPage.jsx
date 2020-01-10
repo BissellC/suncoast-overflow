@@ -8,6 +8,7 @@ const QuestionPage = props => {
   const [questionCount, setQuestionCount] = useState()
   const [answerCount, setAnswerCount] = useState()
   const [answers, setAnswers] = useState([])
+  const [answer, setAnswer] = useState()
 
   const getQuestion = async () => {
     const resp = await axios.get(
@@ -16,6 +17,17 @@ const QuestionPage = props => {
     setQuestion(resp.data)
     setQuestionCount(resp.data.voteCount)
     setAnswers(resp.data.answers)
+  }
+
+  const postAnswer = async () => {
+    const resp = await axios.post('https://localhost:5001/api/Answer/', {
+      id: 0,
+      body: answer,
+      voteCount: 0,
+      timeStamp: new Date().toISOString(),
+      questionId: parseInt(props.match.params.id),
+    })
+    getQuestion()
   }
 
   const upvoteQ = async () => {
@@ -133,7 +145,8 @@ const QuestionPage = props => {
 
         <section className="your-answer">
           <h1>Your Answer</h1>
-          <input type="text"></input>
+          <input type="text" onChange={e => setAnswer(e.target.value)}></input>
+          <button onClick={postAnswer}>Submit Answer</button>
         </section>
       </main>
     </>
