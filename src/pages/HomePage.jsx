@@ -5,9 +5,17 @@ import axios from 'axios'
 
 const HomePage = () => {
   const [questions, setQuestions] = useState([])
+  const [search, setSearch] = useState()
 
   const getQuestions = async () => {
     const resp = await axios.get('https://localhost:5001/api/Question')
+    setQuestions(resp.data)
+  }
+
+  const handleSearch = async () => {
+    const resp = await axios.get(
+      'https://localhost:5001/api/Search/?searchTerm=' + search
+    )
     setQuestions(resp.data)
   }
 
@@ -18,7 +26,10 @@ const HomePage = () => {
   return (
     <>
       <NavBar />
-
+      <div className="search">
+        <input onChange={e => setSearch(e.target.value)} type="search"></input>
+        <button onClick={handleSearch}>Search</button>
+      </div>
       <main>
         <h1>Questions</h1>
         {questions.map(question => {
