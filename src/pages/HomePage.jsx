@@ -8,13 +8,16 @@ const HomePage = () => {
   const [search, setSearch] = useState()
 
   const getQuestions = async () => {
-    const resp = await axios.get('https://localhost:5001/api/Question')
+    const resp = await axios.get(
+      'http://suncoast-overflow-1.herokuapp.com/api/Question'
+    )
     setQuestions(resp.data)
   }
 
   const handleSearch = async () => {
     const resp = await axios.get(
-      'https://localhost:5001/api/Search/?searchTerm=' + search
+      'http://suncoast-overflow-1.herokuapp.com/api/Search/?searchTerm=' +
+        search
     )
     setQuestions(resp.data)
   }

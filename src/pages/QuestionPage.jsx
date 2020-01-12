@@ -12,7 +12,8 @@ const QuestionPage = props => {
 
   const getQuestion = async () => {
     const resp = await axios.get(
-      'https://localhost:5001/api/Question/' + props.match.params.id
+      'http://suncoast-overflow-1.herokuapp.com/api/Question/' +
+        props.match.params.id
     )
     setQuestion(resp.data)
     setQuestionCount(resp.data.voteCount)
@@ -20,19 +21,23 @@ const QuestionPage = props => {
   }
 
   const postAnswer = async () => {
-    const resp = await axios.post('https://localhost:5001/api/Answer/', {
-      id: 0,
-      body: answer,
-      voteCount: 0,
-      timeStamp: new Date().toISOString(),
-      questionId: parseInt(props.match.params.id),
-    })
+    const resp = await axios.post(
+      'http://suncoast-overflow-1.herokuapp.com/api/Answer/',
+      {
+        id: 0,
+        body: answer,
+        voteCount: 0,
+        timeStamp: new Date().toISOString(),
+        questionId: parseInt(props.match.params.id),
+      }
+    )
     getQuestion()
   }
 
   const upvoteQ = async () => {
     const resp = await axios.put(
-      'https://localhost:5001/api/Question/' + props.match.params.id,
+      'http://suncoast-overflow-1.herokuapp.com/api/Question/' +
+        props.match.params.id,
       {
         id: question.id,
         title: question.title,
@@ -47,7 +52,8 @@ const QuestionPage = props => {
 
   const downvoteQ = async () => {
     const resp = await axios.put(
-      'https://localhost:5001/api/Question/' + props.match.params.id,
+      'http://suncoast-overflow-1.herokuapp.com/api/Question/' +
+        props.match.params.id,
       {
         id: question.id,
         title: question.title,
@@ -62,7 +68,7 @@ const QuestionPage = props => {
 
   const upvoteA = async answer => {
     const resp = await axios.put(
-      'https://localhost:5001/api/Answer/' + answer.id,
+      'http://suncoast-overflow-1.herokuapp.com/api/Answer/' + answer.id,
       {
         id: answer.id,
         body: answer.body,
@@ -76,7 +82,7 @@ const QuestionPage = props => {
 
   const downvoteA = async answer => {
     const resp = await axios.put(
-      'https://localhost:5001/api/Answer/' + answer.id,
+      'http://suncoast-overflow-1.herokuapp.com/api/Answer/' + answer.id,
       {
         id: answer.id,
         body: answer.body,
