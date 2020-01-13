@@ -9,14 +9,14 @@ const HomePage = () => {
 
   const getQuestions = async () => {
     const resp = await axios.get(
-      'http://suncoast-overflow-1.herokuapp.com/api/Question'
+      'https://suncoast-overflow-1.herokuapp.com/api/Question'
     )
     setQuestions(resp.data)
   }
 
   const handleSearch = async () => {
     const resp = await axios.get(
-      'http://suncoast-overflow-1.herokuapp.com/api/Search/?searchTerm=' +
+      'https://suncoast-overflow-1.herokuapp.com/api/Search/?searchTerm=' +
         search
     )
     setQuestions(resp.data)

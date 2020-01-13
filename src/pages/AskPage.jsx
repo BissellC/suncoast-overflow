@@ -12,7 +12,7 @@ const AskPage = () => {
   const postQuestion = async e => {
     e.preventDefault()
     const resp = await axios.post(
-      'http://suncoast-overflow-1.herokuapp.com/api/Question/',
+      'https://suncoast-overflow-1.herokuapp.com/api/Question/',
       {
         id: 0,
         title: title,

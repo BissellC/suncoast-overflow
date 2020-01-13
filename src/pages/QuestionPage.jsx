@@ -12,7 +12,7 @@ const QuestionPage = props => {
 
   const getQuestion = async () => {
     const resp = await axios.get(
-      'http://suncoast-overflow-1.herokuapp.com/api/Question/' +
+      'https://suncoast-overflow-1.herokuapp.com/api/Question/' +
         props.match.params.id
     )
     setQuestion(resp.data)
@@ -22,7 +22,7 @@ const QuestionPage = props => {
 
   const postAnswer = async () => {
     const resp = await axios.post(
-      'http://suncoast-overflow-1.herokuapp.com/api/Answer/',
+      'https://suncoast-overflow-1.herokuapp.com/api/Answer/',
       {
         id: 0,
         body: answer,
@@ -36,7 +36,7 @@ const QuestionPage = props => {
 
   const upvoteQ = async () => {
     const resp = await axios.put(
-      'http://suncoast-overflow-1.herokuapp.com/api/Question/' +
+      'https://suncoast-overflow-1.herokuapp.com/api/Question/' +
         props.match.params.id,
       {
         id: question.id,
@@ -52,7 +52,7 @@ const QuestionPage = props => {
 
   const downvoteQ = async () => {
     const resp = await axios.put(
-      'http://suncoast-overflow-1.herokuapp.com/api/Question/' +
+      'https://suncoast-overflow-1.herokuapp.com/api/Question/' +
         props.match.params.id,
       {
         id: question.id,
@@ -68,7 +68,7 @@ const QuestionPage = props => {
 
   const upvoteA = async answer => {
     const resp = await axios.put(
-      'http://suncoast-overflow-1.herokuapp.com/api/Answer/' + answer.id,
+      'https://suncoast-overflow-1.herokuapp.com/api/Answer/' + answer.id,
       {
         id: answer.id,
         body: answer.body,
@@ -82,7 +82,7 @@ const QuestionPage = props => {
 
   const downvoteA = async answer => {
     const resp = await axios.put(
-      'http://suncoast-overflow-1.herokuapp.com/api/Answer/' + answer.id,
+      'https://suncoast-overflow-1.herokuapp.com/api/Answer/' + answer.id,
       {
         id: answer.id,
         body: answer.body,
